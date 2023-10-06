@@ -129,18 +129,10 @@ public class SearchStepDefinitions {
         String destinationCountry = itinerary.get(0).get("Destination Country");
         String destinationAirport = itinerary.get(0).get("Destination Airport");
 
-        if (tripType.equals("one way")) {
-            actor.attemptsTo(
-                    Click.on(Button.withText("One way"))
-            );
-        } else {
-            actor.attemptsTo(
-                    Click.on(Button.withText("Return trip"))
-            );
-        }
         actor.attemptsTo(
+                SetItinerary.tripTypeTo(tripType),
                 SetItinerary.from(departureCountry, departureAirport)
-                        .to(destinationCountry, destinationAirport)
+                            .to(destinationCountry, destinationAirport)
         );
     }
 

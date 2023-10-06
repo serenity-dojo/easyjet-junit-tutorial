@@ -46,20 +46,6 @@ public class SearchStepDefinitions {
         searchForm.setTripType(tripType);
         searchForm.setDepartureAirport(departureCountry, departureAirport);
         searchForm.setDestinationAirport(destinationCountry, destinationAirport);
-
-//        if (tripType.equals("one way")) {
-//            actor.attemptsTo(
-//                    Click.on(Button.withText("One way"))
-//            );
-//        } else {
-//            actor.attemptsTo(
-//                    Click.on(Button.withText("Return trip"))
-//            );
-//        }
-//        actor.attemptsTo(
-//                SetItinerary.from(departureCountry, departureAirport)
-//                        .to(destinationCountry, destinationAirport)
-//        );
     }
 
     @And("{} requests to see the available flights")

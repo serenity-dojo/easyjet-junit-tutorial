@@ -4,10 +4,10 @@ import com.google.common.collect.ImmutableMap;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageComponent;
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.serenitybdd.core.pages.WebElementState;
 import net.serenitybdd.screenplay.targets.SearchableTarget;
 import net.serenitybdd.screenplay.targets.Target;
 import net.serenitybdd.screenplay.ui.Button;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -59,6 +59,11 @@ public class SearchForm extends PageComponent {
     }
 
     public boolean returnDateFieldIsDisplayed() {
+        Assert.assertEquals(getAge(),5);
         return !findAll(RETURN_DATE_FIELD).isEmpty();
+    }
+
+    private int getAge() {
+        return 5;
     }
 }
